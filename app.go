@@ -1,14 +1,104 @@
 package main
 
 import (
+	"fmt"
 	tea "github.com/charmbracelet/bubbletea"
+	"os"
 )
 
-func main() {
-	p := tea.NewProgram(
-		newSimplePage("Under construction"),
-	)
-	if err := p.Start(); err != nil {
-		panic(err)
+type problem_tree struct {
+	category   []string
+	completed  []bool
+	difficulty []string
+}
+
+type model struct {
+	currentPage  string
+	select_type  []string
+	cursor       int
+	selected     map[int]struct{}
+	problem_tree problem_tree
+}
+
+func initialModel() model {
+	return model{
+		select_type: []string{"category", "completed", "difficulty"},
+		cursor:      0,
+		selected:    make(map[int]struct{}),
+		problem_tree: problem_tree{
+			category:   []string{"Linear Algebra", "Statistics and Probability", "Machine Learning", "Deep Learning", "NLP", "Computer Vision"},
+			completed:  []bool{true, false},
+			difficulty: []string{"Easy", "Medium", "Hard"},
+		},
 	}
+
+}
+
+func (m model) Init() tea.Cmd {
+	return nil
+}
+
+func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	switch msg := msg.(type) {
+
+	case tea.KeyMsg:
+
+		switch msg.String() {
+
+		case "ctrl+c", "q":
+			return m, tea.Quit
+
+		case "up", "k":
+			if m.cursor > 0 {
+				m.cursor--
+			}
+
+		case "down", "j":
+			if m.cursor < len(m.select_type)-1 {
+				m.cursor++
+			}
+		case "enter", " ":
+			_, ok := m.selected[m.cursor]
+			if ok {
+				delete(m.selected, m.cursor)
+			} else {
+				m.selected[m.cursor] = struct{}{}
+			}
+		}
+	}
+
+	return m, nil
+
+}
+
+func (m model) View() string {
+	s := "How would you like to sort your problems?\n"
+
+	for i, choice := range m.select_type {
+
+		cursor := " "
+		if m.cursor == i {
+			cursor = ">"
+		}
+
+		checked := " "
+		if _, ok := m.selected[i]; ok {
+			checked = "x"
+		}
+
+		s += fmt.Sprintf("%s [%s] %s\n", cursor, checked, choice)
+	}
+
+	s += "\nPress q to quit.\n"
+
+	return s
+}
+
+func main() {
+	p := tea.NewProgram(initialModel())
+	if _, err := p.Run(); err != nil {
+		fmt.Printf("error", err)
+		os.Exit(1)
+	}
+
 }
