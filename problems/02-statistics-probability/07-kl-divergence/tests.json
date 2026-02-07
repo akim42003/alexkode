@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "identical distributions",
+            "input": {"p": [0.25, 0.25, 0.25, 0.25], "q": [0.25, 0.25, 0.25, 0.25]},
+            "expected": 0.0
+        },
+        {
+            "name": "uniform vs peaked",
+            "input": {"p": [0.5, 0.5], "q": [0.9, 0.1]},
+            "expected": 0.5108256238
+        },
+        {
+            "name": "peaked vs uniform",
+            "input": {"p": [0.9, 0.1], "q": [0.5, 0.5]},
+            "expected": 0.3681281734
+        },
+        {
+            "name": "three categories",
+            "input": {"p": [0.333, 0.333, 0.334], "q": [0.5, 0.25, 0.25]},
+            "expected": 0.0853027639
+        },
+        {
+            "name": "binary near equal",
+            "input": {"p": [0.6, 0.4], "q": [0.5, 0.5]},
+            "expected": 0.0204081633
+        }
+    ]
+}

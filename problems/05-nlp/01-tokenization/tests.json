@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "simple sentence",
+            "input": "Hello world",
+            "expected": ["Hello", "world"]
+        },
+        {
+            "name": "with punctuation",
+            "input": "Hello, world!",
+            "expected": ["Hello,", "world!"]
+        },
+        {
+            "name": "single word",
+            "input": "AI",
+            "expected": ["AI"]
+        },
+        {
+            "name": "multiple spaces",
+            "input": "Hello   world",
+            "expected": ["Hello", "world"]
+        },
+        {
+            "name": "longer sentence",
+            "input": "The quick brown fox jumps over the lazy dog",
+            "expected": ["The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "simple list",
+            "input": [1, 2, 3, 4, 5],
+            "expected": {"mean": 3.0, "variance": 2.0, "std": 1.4142135624}
+        },
+        {
+            "name": "single element",
+            "input": [5],
+            "expected": {"mean": 5.0, "variance": 0.0, "std": 0.0}
+        },
+        {
+            "name": "negative numbers",
+            "input": [-2, -1, 0, 1, 2],
+            "expected": {"mean": 0.0, "variance": 2.0, "std": 1.4142135624}
+        },
+        {
+            "name": "all same values",
+            "input": [3, 3, 3, 3],
+            "expected": {"mean": 3.0, "variance": 0.0, "std": 0.0}
+        },
+        {
+            "name": "two elements",
+            "input": [0, 10],
+            "expected": {"mean": 5.0, "variance": 25.0, "std": 5.0}
+        }
+    ]
+}

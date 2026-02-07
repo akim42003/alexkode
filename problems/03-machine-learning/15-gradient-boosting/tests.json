@@ -1,0 +1,25 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "simple regression y=x",
+            "input": {"X_train": [[1], [2], [3], [4], [5]], "y_train": [1, 2, 3, 4, 5], "X_test": [[1], [3], [5]], "n_estimators": 50, "lr": 0.1},
+            "expected": {"predictions_close_to": [1, 3, 5]}
+        },
+        {
+            "name": "constant output",
+            "input": {"X_train": [[1], [2], [3]], "y_train": [5, 5, 5], "X_test": [[1], [2]], "n_estimators": 10, "lr": 0.1},
+            "expected": {"predictions_close_to": [5, 5]}
+        },
+        {
+            "name": "quadratic pattern",
+            "input": {"X_train": [[1], [2], [3], [4]], "y_train": [1, 4, 9, 16], "X_test": [[2], [3]], "n_estimators": 100, "lr": 0.1},
+            "expected": {"predictions_close_to": [4, 9]}
+        },
+        {
+            "name": "negative slope",
+            "input": {"X_train": [[1], [2], [3], [4], [5]], "y_train": [10, 8, 6, 4, 2], "X_test": [[2], [4]], "n_estimators": 50, "lr": 0.1},
+            "expected": {"predictions_close_to": [8, 4]}
+        }
+    ]
+}

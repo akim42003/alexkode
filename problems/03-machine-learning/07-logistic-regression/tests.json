@@ -1,0 +1,25 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "linearly separable 1D",
+            "input": {"X": [[-3], [-2], [-1], [1], [2], [3]], "y": [0, 0, 0, 1, 1, 1], "lr": 0.1, "epochs": 1000},
+            "expected": {"accuracy": 1.0}
+        },
+        {
+            "name": "2D linearly separable",
+            "input": {"X": [[0, 0], [0, 1], [1, 0], [1, 1]], "y": [0, 0, 0, 1], "lr": 0.5, "epochs": 2000},
+            "expected": {"accuracy": 1.0}
+        },
+        {
+            "name": "OR gate",
+            "input": {"X": [[0, 0], [0, 1], [1, 0], [1, 1]], "y": [0, 1, 1, 1], "lr": 0.5, "epochs": 2000},
+            "expected": {"accuracy": 1.0}
+        },
+        {
+            "name": "all same class",
+            "input": {"X": [[1], [2], [3]], "y": [1, 1, 1], "lr": 0.1, "epochs": 100},
+            "expected": {"accuracy": 1.0}
+        }
+    ]
+}

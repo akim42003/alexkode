@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "standard normal at 0",
+            "input": {"mean": 0, "std": 1, "x": 0},
+            "expected": 0.3989422804
+        },
+        {
+            "name": "standard normal at 1",
+            "input": {"mean": 0, "std": 1, "x": 1},
+            "expected": 0.2419707245
+        },
+        {
+            "name": "standard normal at -1",
+            "input": {"mean": 0, "std": 1, "x": -1},
+            "expected": 0.2419707245
+        },
+        {
+            "name": "custom mean and std",
+            "input": {"mean": 5, "std": 2, "x": 5},
+            "expected": 0.1994711402
+        },
+        {
+            "name": "standard normal at 2",
+            "input": {"mean": 0, "std": 1, "x": 2},
+            "expected": 0.0539909665
+        }
+    ]
+}

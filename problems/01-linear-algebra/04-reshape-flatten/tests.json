@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "2x3 to 3x2",
+            "input": {"matrix": [[1, 2, 3], [4, 5, 6]], "shape": [3, 2]},
+            "expected": [[1, 2], [3, 4], [5, 6]]
+        },
+        {
+            "name": "2x3 to 6x1",
+            "input": {"matrix": [[1, 2, 3], [4, 5, 6]], "shape": [6, 1]},
+            "expected": [[1], [2], [3], [4], [5], [6]]
+        },
+        {
+            "name": "3x2 to 1x6",
+            "input": {"matrix": [[1, 2], [3, 4], [5, 6]], "shape": [1, 6]},
+            "expected": [[1, 2, 3, 4, 5, 6]]
+        },
+        {
+            "name": "1x1 unchanged",
+            "input": {"matrix": [[5]], "shape": [1, 1]},
+            "expected": [[5]]
+        },
+        {
+            "name": "4x1 to 2x2",
+            "input": {"matrix": [[1], [2], [3], [4]], "shape": [2, 2]},
+            "expected": [[1, 2], [3, 4]]
+        }
+    ]
+}

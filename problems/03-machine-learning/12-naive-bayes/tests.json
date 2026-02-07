@@ -1,0 +1,25 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "two class well separated",
+            "input": {"X_train": [[1, 1], [1.5, 1.5], [2, 2], [8, 8], [8.5, 8.5], [9, 9]], "y_train": [0, 0, 0, 1, 1, 1], "X_test": [[1, 1], [9, 9]]},
+            "expected": [0, 1]
+        },
+        {
+            "name": "1D separation",
+            "input": {"X_train": [[0], [1], [2], [10], [11], [12]], "y_train": [0, 0, 0, 1, 1, 1], "X_test": [[1], [11]]},
+            "expected": [0, 1]
+        },
+        {
+            "name": "three classes",
+            "input": {"X_train": [[0, 0], [1, 0], [5, 5], [6, 5], [10, 0], [11, 0]], "y_train": [0, 0, 1, 1, 2, 2], "X_test": [[0.5, 0], [5.5, 5], [10.5, 0]]},
+            "expected": [0, 1, 2]
+        },
+        {
+            "name": "training data itself",
+            "input": {"X_train": [[1], [2], [10], [11]], "y_train": [0, 0, 1, 1], "X_test": [[1], [2], [10], [11]]},
+            "expected": [0, 0, 1, 1]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "padding 1 stride 1",
+            "input": {"image": [[1, 2, 3], [4, 5, 6], [7, 8, 9]], "kernel": [[1, 0], [0, -1]], "padding": 1, "stride": 1},
+            "expected": {"output_shape": [4, 4]}
+        },
+        {
+            "name": "no padding stride 1",
+            "input": {"image": [[1, 2, 3], [4, 5, 6], [7, 8, 9]], "kernel": [[1, 0], [0, -1]], "padding": 0, "stride": 1},
+            "expected": {"output_shape": [2, 2]}
+        },
+        {
+            "name": "6x6 stride 2",
+            "input": {"image": [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30], [31, 32, 33, 34, 35, 36]], "kernel": [[1, 1, 1], [1, 1, 1], [1, 1, 1]], "padding": 0, "stride": 2},
+            "expected": {"output_shape": [2, 2]}
+        },
+        {
+            "name": "zero padding shape",
+            "input": {"image": [[1, 2], [3, 4]], "kernel": [[1]], "padding": 1, "stride": 1},
+            "expected": {"output_shape": [4, 4]}
+        },
+        {
+            "name": "output size formula",
+            "input": {"input_size": 6, "kernel_size": 3, "padding": 1, "stride": 2},
+            "expected": {"output_size": 3}
+        }
+    ]
+}

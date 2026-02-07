@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "medical test basic",
+            "input": {"prior": 0.01, "likelihood": 0.9, "evidence": 0.059},
+            "expected": 0.1525423729
+        },
+        {
+            "name": "equal prior",
+            "input": {"prior": 0.5, "likelihood": 0.8, "evidence": 0.5},
+            "expected": 0.8
+        },
+        {
+            "name": "certain prior",
+            "input": {"prior": 1.0, "likelihood": 0.7, "evidence": 0.7},
+            "expected": 1.0
+        },
+        {
+            "name": "low prior high likelihood",
+            "input": {"prior": 0.001, "likelihood": 0.99, "evidence": 0.05},
+            "expected": 0.0198
+        },
+        {
+            "name": "symmetric case",
+            "input": {"prior": 0.5, "likelihood": 0.5, "evidence": 0.5},
+            "expected": 0.5
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "min-max scaling",
+            "input": {"data": [[1, 10], [2, 20], [3, 30]], "method": "minmax"},
+            "expected": [[0.0, 0.0], [0.5, 0.5], [1.0, 1.0]]
+        },
+        {
+            "name": "standard scaling",
+            "input": {"data": [[1, 2], [3, 4], [5, 6]], "method": "standard"},
+            "expected": [[-1.2247448714, -1.2247448714], [0.0, 0.0], [1.2247448714, 1.2247448714]]
+        },
+        {
+            "name": "single sample minmax",
+            "input": {"data": [[5, 10]], "method": "minmax"},
+            "expected": [[0.0, 0.0]]
+        },
+        {
+            "name": "already scaled",
+            "input": {"data": [[0, 0], [0.5, 0.5], [1, 1]], "method": "minmax"},
+            "expected": [[0.0, 0.0], [0.5, 0.5], [1.0, 1.0]]
+        },
+        {
+            "name": "negative values standard",
+            "input": {"data": [[-3], [0], [3]], "method": "standard"},
+            "expected": [[-1.2247448714], [0.0], [1.2247448714]]
+        }
+    ]
+}

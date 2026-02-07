@@ -1,0 +1,25 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "estimate pi with 10000 samples",
+            "input": {"n_samples": 10000, "seed": 42},
+            "expected": 3.1396
+        },
+        {
+            "name": "estimate pi with 1000 samples",
+            "input": {"n_samples": 1000, "seed": 42},
+            "expected": 3.14
+        },
+        {
+            "name": "estimate pi with 100000 samples",
+            "input": {"n_samples": 100000, "seed": 42},
+            "expected": 3.14256
+        },
+        {
+            "name": "small sample seed 0",
+            "input": {"n_samples": 1000, "seed": 0},
+            "expected": 3.18
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "2x2 diagonal",
+            "input": [[3, 0], [0, 5]],
+            "expected": [5.0, 3.0]
+        },
+        {
+            "name": "2x2 identity",
+            "input": [[1, 0], [0, 1]],
+            "expected": [1.0, 1.0]
+        },
+        {
+            "name": "1x1 matrix",
+            "input": [[7]],
+            "expected": [7.0]
+        },
+        {
+            "name": "2x2 scaled identity",
+            "input": [[4, 0], [0, 4]],
+            "expected": [4.0, 4.0]
+        },
+        {
+            "name": "3x3 diagonal",
+            "input": [[2, 0, 0], [0, 6, 0], [0, 0, 1]],
+            "expected": [6.0, 2.0, 1.0]
+        }
+    ]
+}

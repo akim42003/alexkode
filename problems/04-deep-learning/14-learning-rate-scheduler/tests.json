@@ -1,0 +1,35 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "step decay epoch 0",
+            "input": {"method": "step_decay", "epoch": 0, "lr_init": 0.1, "step_size": 10, "gamma": 0.5},
+            "expected": 0.1
+        },
+        {
+            "name": "step decay epoch 10",
+            "input": {"method": "step_decay", "epoch": 10, "lr_init": 0.1, "step_size": 10, "gamma": 0.5},
+            "expected": 0.05
+        },
+        {
+            "name": "step decay epoch 20",
+            "input": {"method": "step_decay", "epoch": 20, "lr_init": 0.1, "step_size": 10, "gamma": 0.5},
+            "expected": 0.025
+        },
+        {
+            "name": "cosine annealing start",
+            "input": {"method": "cosine", "epoch": 0, "lr_max": 0.1, "lr_min": 0.001, "T_max": 100},
+            "expected": 0.1
+        },
+        {
+            "name": "cosine annealing end",
+            "input": {"method": "cosine", "epoch": 100, "lr_max": 0.1, "lr_min": 0.001, "T_max": 100},
+            "expected": 0.001
+        },
+        {
+            "name": "exponential decay",
+            "input": {"method": "exponential", "epoch": 10, "lr_init": 0.1, "decay": 0.95},
+            "expected": 0.0598736939
+        }
+    ]
+}

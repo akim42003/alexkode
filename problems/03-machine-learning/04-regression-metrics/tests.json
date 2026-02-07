@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "perfect predictions",
+            "input": {"y_true": [1, 2, 3, 4, 5], "y_pred": [1, 2, 3, 4, 5]},
+            "expected": {"mse": 0.0, "mae": 0.0, "rmse": 0.0, "r2": 1.0}
+        },
+        {
+            "name": "off by one",
+            "input": {"y_true": [1, 2, 3], "y_pred": [2, 3, 4]},
+            "expected": {"mse": 1.0, "mae": 1.0, "rmse": 1.0, "r2": -0.5}
+        },
+        {
+            "name": "simple case",
+            "input": {"y_true": [3, -0.5, 2, 7], "y_pred": [2.5, 0.0, 2, 8]},
+            "expected": {"mse": 0.375, "mae": 0.5, "rmse": 0.6123724357, "r2": 0.9486081371}
+        },
+        {
+            "name": "all zeros predicted",
+            "input": {"y_true": [1, 2, 3], "y_pred": [0, 0, 0]},
+            "expected": {"mse": 4.6666666667, "mae": 2.0, "rmse": 2.1602468995, "r2": -6.0}
+        },
+        {
+            "name": "mean predicted",
+            "input": {"y_true": [1, 2, 3], "y_pred": [2, 2, 2]},
+            "expected": {"mse": 0.6666666667, "mae": 0.6666666667, "rmse": 0.8164965809, "r2": 0.0}
+        }
+    ]
+}

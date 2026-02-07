@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "three logits",
+            "input": [2.0, 1.0, 0.1],
+            "expected": [0.6590011388, 0.2424329707, 0.0985658905]
+        },
+        {
+            "name": "equal logits",
+            "input": [1.0, 1.0, 1.0],
+            "expected": [0.3333333333, 0.3333333333, 0.3333333333]
+        },
+        {
+            "name": "large equal logits",
+            "input": [1000, 1000, 1000],
+            "expected": [0.3333333333, 0.3333333333, 0.3333333333]
+        },
+        {
+            "name": "two logits",
+            "input": [0, 0],
+            "expected": [0.5, 0.5]
+        },
+        {
+            "name": "dominant logit",
+            "input": [10, 0, 0],
+            "expected": [0.9999546021, 0.0000226990, 0.0000226990]
+        }
+    ]
+}

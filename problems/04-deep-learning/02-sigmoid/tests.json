@@ -1,0 +1,35 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "zero input",
+            "input": [0],
+            "expected": [0.5]
+        },
+        {
+            "name": "positive values",
+            "input": [1, 2],
+            "expected": [0.7310585786, 0.8807970780]
+        },
+        {
+            "name": "negative values",
+            "input": [-1, -2],
+            "expected": [0.2689414214, 0.1192029220]
+        },
+        {
+            "name": "mixed values",
+            "input": [-2, -1, 0, 1, 2],
+            "expected": [0.1192029220, 0.2689414214, 0.5, 0.7310585786, 0.8807970780]
+        },
+        {
+            "name": "large positive",
+            "input": [100],
+            "expected": [1.0]
+        },
+        {
+            "name": "large negative",
+            "input": [-100],
+            "expected": [0.0]
+        }
+    ]
+}

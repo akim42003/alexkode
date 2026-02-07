@@ -1,0 +1,35 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "scalar multiply by 2",
+            "input": {"matrix": [[1, 2], [3, 4]], "scalar": 2, "operation": "multiply"},
+            "expected": [[2, 4], [6, 8]]
+        },
+        {
+            "name": "element-wise add",
+            "input": {"a": [[1, 2], [3, 4]], "b": [[5, 6], [7, 8]], "operation": "add"},
+            "expected": [[6, 8], [10, 12]]
+        },
+        {
+            "name": "element-wise subtract",
+            "input": {"a": [[5, 6], [7, 8]], "b": [[1, 2], [3, 4]], "operation": "subtract"},
+            "expected": [[4, 4], [4, 4]]
+        },
+        {
+            "name": "hadamard product",
+            "input": {"a": [[1, 2], [3, 4]], "b": [[5, 6], [7, 8]], "operation": "hadamard"},
+            "expected": [[5, 12], [21, 32]]
+        },
+        {
+            "name": "scalar multiply by zero",
+            "input": {"matrix": [[1, 2], [3, 4]], "scalar": 0, "operation": "multiply"},
+            "expected": [[0, 0], [0, 0]]
+        },
+        {
+            "name": "scalar multiply negative",
+            "input": {"matrix": [[1, -2], [-3, 4]], "scalar": -1, "operation": "multiply"},
+            "expected": [[-1, 2], [3, -4]]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "AND gate",
+            "input": {"X_train": [[0, 0], [0, 1], [1, 0], [1, 1]], "y_train": [0, 0, 0, 1], "X_test": [[0, 0], [1, 1]]},
+            "expected": [0, 1]
+        },
+        {
+            "name": "OR gate",
+            "input": {"X_train": [[0, 0], [0, 1], [1, 0], [1, 1]], "y_train": [0, 1, 1, 1], "X_test": [[0, 0], [0, 1]]},
+            "expected": [0, 1]
+        },
+        {
+            "name": "single feature threshold",
+            "input": {"X_train": [[1], [2], [3], [4], [5], [6]], "y_train": [0, 0, 0, 1, 1, 1], "X_test": [[2], [5]]},
+            "expected": [0, 1]
+        },
+        {
+            "name": "train equals test",
+            "input": {"X_train": [[1, 0], [0, 1], [1, 1]], "y_train": [0, 1, 1], "X_test": [[1, 0], [0, 1], [1, 1]]},
+            "expected": [0, 1, 1]
+        },
+        {
+            "name": "all same class",
+            "input": {"X_train": [[1], [2], [3]], "y_train": [1, 1, 1], "X_test": [[0], [5]]},
+            "expected": [1, 1]
+        }
+    ]
+}

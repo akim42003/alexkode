@@ -1,0 +1,25 @@
+{
+    "function": "solution",
+    "test_cases": [
+        {
+            "name": "identical samples",
+            "input": {"sample1": [1, 2, 3, 4, 5], "sample2": [1, 2, 3, 4, 5]},
+            "expected": {"t_statistic": 0.0, "reject_null": false}
+        },
+        {
+            "name": "clearly different means",
+            "input": {"sample1": [1, 2, 3, 4, 5], "sample2": [10, 11, 12, 13, 14]},
+            "expected": {"t_statistic": -9.0, "reject_null": true}
+        },
+        {
+            "name": "similar samples",
+            "input": {"sample1": [5, 5, 5, 5], "sample2": [5, 5, 5, 5]},
+            "expected": {"t_statistic": 0.0, "reject_null": false}
+        },
+        {
+            "name": "shifted by 1",
+            "input": {"sample1": [1, 2, 3], "sample2": [2, 3, 4]},
+            "expected": {"t_statistic": -1.2247448714, "reject_null": false}
+        }
+    ]
+}
