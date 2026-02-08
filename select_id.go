@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func (m model) renderSelectionPage() string {
+func (m model) renderProblemsPage() string {
 	s := "Pick a problem from the list \n"
 
 	for i, choice := range m.select_type {

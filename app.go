@@ -22,6 +22,7 @@ type model struct {
 
 func initialModel() model {
 	return model{
+		currentPage: "select_problem",
 		select_type: []string{"category", "completed", "difficulty"},
 		cursor:      0,
 		selected:    make(map[int]struct{}),
@@ -58,11 +59,22 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.cursor++
 			}
 		case "enter", " ":
-			_, ok := m.selected[m.cursor]
-			if ok {
-				delete(m.selected, m.cursor)
-			} else {
-				m.selected[m.cursor] = struct{}{}
+
+			if m.currentPage == "select_problem" {
+				_, ok := m.selected[m.cursor]
+				if ok {
+					delete(m.selected, m.cursor)
+				} else {
+					m.selected[m.cursor] = struct{}{}
+				}
+			}
+		case "c":
+			if m.currentPage == "select_problem" && len(m.selected) > 0 {
+				m.currentPage = "select_id"
+			}
+		case "b":
+			if m.currentPage == "select_id" {
+				m.currentPage = "select_problem"
 			}
 		}
 	}
@@ -72,26 +84,16 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m model) View() string {
-	s := "How would you like to sort your problems?\n"
+	switch m.currentPage {
 
-	for i, choice := range m.select_type {
+	case "select_problem":
+		return m.renderSelectionPage()
+	case "select_id":
+		return m.renderProblemsPage()
+	default:
+		return "Unknown page"
 
-		cursor := " "
-		if m.cursor == i {
-			cursor = ">"
-		}
-
-		checked := " "
-		if _, ok := m.selected[i]; ok {
-			checked = "x"
-		}
-
-		s += fmt.Sprintf("%s [%s] %s\n", cursor, checked, choice)
 	}
-
-	s += "\nPress q to quit.\n"
-
-	return s
 }
 
 func main() {
