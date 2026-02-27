@@ -96,7 +96,8 @@ Create a `config.json` in the project root:
 
 ```json
 {
-    "editor": "nvim"
+    "editor": "nvim",
+    "terminal": "ghostty"
 }
 ```
 
