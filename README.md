@@ -45,12 +45,16 @@ deep-ml-tui/
 ## Build
 
 ```bash
+go mod init v0
+go mod tidy
 go build -o deep-ml-tui ./cmd/main.go
 ```
 
 Or run directly:
 
 ```bash
+go mod init v0
+go mod tidy
 go run ./cmd/main.go
 ```
 
