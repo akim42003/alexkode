@@ -284,11 +284,31 @@ func (m Model) openEditor(p problem.Problem) tea.Cmd {
 	}
 
 	editor := m.config.ResolveEditor()
+	terminal := m.config.ResolveTerminal()
 
-	c := exec.Command(editor, userFile)
-	return tea.ExecProcess(c, func(err error) tea.Msg {
+	return func() tea.Msg {
+		var cmd *exec.Cmd
+		switch terminal {
+		case "ghostty":
+			cmd = exec.Command("ghostty", "-e", editor, userFile)
+		case "kitty":
+			cmd = exec.Command("kitty", editor, userFile)
+		case "alacritty":
+			cmd = exec.Command("alacritty", "-e", editor, userFile)
+		case "wezterm":
+			cmd = exec.Command("wezterm", "start", "--", editor, userFile)
+		case "gnome-terminal":
+			cmd = exec.Command("gnome-terminal", "--", editor, userFile)
+		case "konsole":
+			cmd = exec.Command("konsole", "-e", editor, userFile)
+		case "xfce4-terminal":
+			cmd = exec.Command("xfce4-terminal", "-e", editor+" "+userFile)
+		default:
+			cmd = exec.Command("xterm", "-e", editor, userFile)
+		}
+		err := cmd.Start()
 		return editorFinishedMsg{err}
-	})
+	}
 }
 
 func (m Model) runTestsCmd(p problem.Problem) tea.Cmd {
