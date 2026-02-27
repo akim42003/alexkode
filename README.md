@@ -47,7 +47,7 @@ deep-ml-tui/
 ```bash
 go mod init v0
 go mod tidy
-go build -o deep-ml-tui ./cmd/main.go
+go build -o alexkode ./cmd/main.go
 ```
 
 Or run directly:
@@ -61,7 +61,7 @@ go run ./cmd/main.go
 ## Usage
 
 ```bash
-./deep-ml-tui
+./alexkode
 ```
 
 ### Navigation
