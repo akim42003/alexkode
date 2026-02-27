@@ -163,7 +163,9 @@ func parseCategoryTitle(slug string) string {
 	for i, w := range words {
 		if len(w) > 0 {
 			// Handle common short words
-			if w == "and" || w == "of" || w == "the" {
+			if w == "nlp" || w == "cv" {
+				words[i] = strings.ToUpper(w)
+			} else if w == "and" || w == "of" || w == "the" {
 				words[i] = w
 			} else {
 				words[i] = strings.ToUpper(w[:1]) + w[1:]
