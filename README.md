@@ -20,7 +20,8 @@ git clone https://github.com/akim42003/alexkode.git
 cd alexkode
 
 # 2. Clone the problems into the TUI directory
-git clone https://github.com/akim42003/mldl_problems.git 
+git clone https://github.com/akim42003/mldl_problems.git
+mv mldl_problems problems
 ```
 
 Your directory should look like:
