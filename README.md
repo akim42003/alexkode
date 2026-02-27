@@ -1,6 +1,6 @@
 # Deep-ML 60
 
-A terminal UI for practicing 60 machine learning and linear algebra problems. Browse by category, difficulty, or completion status — edit solutions in your preferred editor, run tests, and track progress, all without leaving the terminal.
+A TUI for machine learning and linear algebra problems. Browse by category, difficulty, or completion status---edit solutions in your preferred editor, run tests, and track progress, without leaving the terminal.
 
 ![Go](https://img.shields.io/badge/Go-1.21+-00ADD8?logo=go&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)
