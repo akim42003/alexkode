@@ -16,11 +16,11 @@ This project is split across two repositories — the TUI app and the problem se
 
 ```bash
 # 1. Clone the TUI
-git clone https://github.com/yourusername/deep-ml-tui.git
-cd deep-ml-tui
+git clone https://github.com/akim42003/alexkode.git
+cd alexkode
 
 # 2. Clone the problems into the TUI directory
-git clone https://github.com/yourusername/deep-ml-problems.git problems
+git clone https://github.com/akim42003/mldl_problems.git 
 ```
 
 Your directory should look like:
