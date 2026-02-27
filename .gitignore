@@ -1,3 +1,7 @@
 go.sum
 go.mod
 v0
+main
+deep-ml-tui
+user_code/
+progress.json
